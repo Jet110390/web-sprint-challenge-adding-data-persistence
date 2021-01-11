@@ -5,7 +5,7 @@ const Projects = require('./model');
 
 const router = express.Router();
 
-router.get('/api/projects', (req, res) => {
+router.get('/', (req, res) => {
   Projects.find()
     .then(projects => {
       res.json(projects);
@@ -15,7 +15,7 @@ router.get('/api/projects', (req, res) => {
     });
 });
 
-router.post('/api/projects', (req, res) => {
+router.post('/', (req, res) => {
     const projectData = req.body;
   
     Projects.add(projectData)

@@ -5,7 +5,7 @@ const Tasks = require('./model.js');
 
 const router = express.Router();
 
-router.get('/api/tasks', (req, res) => {
+router.get('/', (req, res) => {
   Tasks.find()
     .then(tasks => {
       res.json(tasks);
@@ -15,7 +15,7 @@ router.get('/api/tasks', (req, res) => {
     });
 });
 
-router.post('/api/tasks', (req, res) => {
+router.post('/', (req, res) => {
     const taskData = req.body;
   
     Tasks.add(taskData)

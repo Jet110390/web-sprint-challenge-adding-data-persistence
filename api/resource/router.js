@@ -5,7 +5,7 @@ const Resources = require('./model.js');
 
 const router = express.Router();
 
-router.get('/api/resources', (req, res) => {
+router.get('/', (req, res) => {
   Resources.find()
     .then(resources => {
       res.json(resources);
@@ -15,7 +15,7 @@ router.get('/api/resources', (req, res) => {
     });
 });
 
-router.post('/api/resources', (req, res) => {
+router.post('/', (req, res) => {
     const resourceData = req.body;
   
     Resources.add(resourceData)
